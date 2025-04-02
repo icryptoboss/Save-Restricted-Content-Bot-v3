@@ -22,15 +22,16 @@ async def load_and_run_plugins():
 async def main():
     await load_and_run_plugins()
     while True:
-        await asyncio.sleep(1)  
-
+        await asyncio.sleep(1)
+        
 if __name__ == "__main__":
-   loop = asyncio.get_running_loop()
-    print("Starting clients ...")
+    loop = asyncio.get_running_loop()  # Make sure this is properly indented
+    print("Starting clients ...")  # Align this properly
     try:
-        asyncio.run(main())
+        asyncio.run(main())  # Align this properly too
     except KeyboardInterrupt:
         print("Shutting down...")
+
 except RuntimeError:
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
